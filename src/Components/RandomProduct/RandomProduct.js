@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './RandomProduct.css'
 import Modal from 'react-modal';
 import { getRandomProduct } from '../../Utilities/Rendom';
+import { FaTimes } from "react-icons/fa";
 
 Modal.setAppElement('#root');
 const customStyles = {
@@ -12,21 +13,26 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        textAlign:'center'
     },
 };
 
 
 const RandomProduct = ({fortuneProduct}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [randomProdcut, setRandomProduct] = useState({})
+    const [randomProdcut, setRandomProduct] = useState([])
 
     const rendomProduct = () => {
-
-        if (fortuneProduct) {
+      
+         if (fortuneProduct.length===0) {
+             alert('please select four product');
+            closeModal();
+        }else{
             const selectProduct = getRandomProduct(fortuneProduct);
-            setRandomProduct(selectProduct);
+            setRandomProduct([selectProduct]);
             openModal();
         }
+         
 
 
     }
@@ -46,8 +52,10 @@ const RandomProduct = ({fortuneProduct}) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <img src={randomProdcut.image} className='random-image' alt="" />
-                <h2>{randomProdcut.name}</h2>
+                <button onClick={closeModal} className='close-button-modal'><FaTimes></FaTimes></button>
+                <h1>Congratulation...</h1>
+                <img src={randomProdcut[0]?.image} className='random-image' alt="" />
+                <h2>{randomProdcut[0]?.name}</h2>
             </Modal>
         </div>
     );

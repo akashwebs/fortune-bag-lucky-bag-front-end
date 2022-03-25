@@ -9,5 +9,13 @@
     cursor: pointer;
 }
 .random-image{
-    width: 50%;
+    width: 25rem;
+    height: 15rem;
+    
+}
+.close-button-modal{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    
 }
