@@ -1,0 +1,13 @@
+.nav{
+    text-align: center;
+}
+.nav h1{
+    margin: 5px 0;
+    color:#E03B8B;
+    font-size: 2.5rem;
+}
+.nav h3{
+    margin: 5px 0;
+    color: #242B2E;
+    font-size: 1.5rem;
+}
