@@ -1,0 +1,13 @@
+.choose-button{
+    padding: 10px 20px;
+    border: 1px solid #E07C24;
+    color: #E07C24;
+    background: none;
+    font-weight: 600;
+    border-radius: 7px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.random-image{
+    width: 50%;
+}

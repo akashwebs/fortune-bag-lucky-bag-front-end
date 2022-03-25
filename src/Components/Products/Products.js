@@ -3,19 +3,8 @@ import { getRandomProduct } from '../../Utilities/Rendom';
 import Bag from '../Bag/Bag';
 import ChooseProduct from '../ChooseProduct/ChooseProduct';
 import './Products.css'
-import Modal from 'react-modal';
-Modal.setAppElement('#root');
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-    },
-};
 
+import RandomProduct from '../RandomProduct/RandomProduct';
 
 
 
@@ -24,8 +13,7 @@ const Products = () => {
     const [bags, setBags] = useState([]);
     // add to cart state
     const [fortuneProduct, setFortuneProduct] = useState([])
-    const [randomProdcut, setRandomProduct] = useState({})
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    
 
     useEffect(() => {
         fetch('products.json')
@@ -34,23 +22,9 @@ const Products = () => {
     }, [])
 
     // --------------rendomly prodcut select
-    const rendomProduct = () => {
-
-        if (fortuneProduct) {
-            const selectProduct = getRandomProduct(fortuneProduct);
-            setRandomProduct(selectProduct);
-            openModal();
-        }
-
-
-    }
+   
     // --------------for modals   
-    const openModal = () => {
-        setIsOpen(true);
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
+   
     // for get random product with store
     
 
@@ -89,20 +63,13 @@ const Products = () => {
 
                         ></ChooseProduct>)
                     }
-                    <button onClick={rendomProduct} className='choose-button'>CHOOSE 1 FOR ME</button>
+                    <RandomProduct fortuneProduct={fortuneProduct}></RandomProduct>
+                    
 
                 </div>
             </div>
 
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-            >
-                <img src={randomProdcut.image} alt="" />
-                <h2>{randomProdcut.name}</h2>
-            </Modal>
+           
         </div>
     );
 };
