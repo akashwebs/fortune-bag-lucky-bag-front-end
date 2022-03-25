@@ -1,7 +1,6 @@
 
 const getRandomProduct=products=>{
-    var rand = products[(Math.random() * products.length) | 0]
-    console.log(rand)
+    return products[(Math.random() * products.length) | 0]
 }
 
 export {getRandomProduct}

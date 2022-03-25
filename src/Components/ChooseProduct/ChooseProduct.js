@@ -2,7 +2,7 @@ import React from 'react';
 import './ChooseProduct.css'
 import { FaTrashAlt } from 'react-icons/fa';
 
-const ChooseProduct = ({fortuneProduct}) => {
+const ChooseProduct = ({fortuneProduct,rendomProduct}) => {
     const {name,image}=fortuneProduct;
     return (
         <div className='choose-product'>
