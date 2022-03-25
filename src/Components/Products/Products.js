@@ -21,12 +21,12 @@ const Products = () => {
             .then(data => setBags(data))
     }, [])
 
-    // --------------rendomly prodcut select
+      
    
-    // --------------for modals   
-   
-    // for get random product with store
-    
+    // choose again
+    const chooseAgain=()=>{
+        setFortuneProduct([]);
+    }
 
     // set product in cart
     const addToCart = bag => {
@@ -63,8 +63,9 @@ const Products = () => {
 
                         ></ChooseProduct>)
                     }
-                    <RandomProduct fortuneProduct={fortuneProduct}></RandomProduct>
-                    
+                    <RandomProduct fortuneProduct={fortuneProduct}></RandomProduct>   
+                    <button onClick={chooseAgain} className='choose-button'>CHOOSE AGAIN</button>
+           
 
                 </div>
             </div>

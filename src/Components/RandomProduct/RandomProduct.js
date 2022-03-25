@@ -32,11 +32,9 @@ const RandomProduct = ({fortuneProduct}) => {
             setRandomProduct([selectProduct]);
             openModal();
         }
-         
-
 
     }
-    
+   
     const openModal = () => {
         setIsOpen(true);
     }
