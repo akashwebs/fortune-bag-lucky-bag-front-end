@@ -17,6 +17,9 @@
     border: 2px solid red;
     padding: 15px;
 }
+.fortune-box>h3{
+    text-align: center;
+}
 @media screen and (max-width: 768px) {
     .container{
         flex-direction: column-reverse;

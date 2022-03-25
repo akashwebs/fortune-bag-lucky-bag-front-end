@@ -1,7 +1,8 @@
 import React from 'react';
 import './Bag.css';
+import { FaCartPlus } from 'react-icons/fa';
 
-const Bag = ({bag}) => {
+const Bag = ({bag,addToCart}) => {
     const {name, image, price}=bag;
     return (
         <div className='product'>
@@ -12,7 +13,9 @@ const Bag = ({bag}) => {
             <h2>{name}</h2>
             <h4>price: ${price}</h4>
             </div>
-            <button className='cart-btn'>Add To Cart</button>
+            <button onClick={()=>addToCart(bag)} className='cart-btn'>Add To Cart 
+                <span className='icon'><FaCartPlus /></span> 
+            </button>
         </div>
     );
 };

@@ -23,6 +23,14 @@
     color: #fff;
     border-radius: 7px;
     cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+.icon{
+    display: block;
+    margin-left:10px ;
+    padding-top: 2px;
 }
 .cart-btn:hover{
     background: #FF6666;
