@@ -1,3 +1,4 @@
+
 .choose-button{
     padding: 10px 20px;
     border: 1px solid #E07C24;
@@ -23,4 +24,12 @@
     right: 20px;
     cursor: pointer;
     
+}
+
+@media screen and (max-width: 600px)  {
+    .random-image{
+        width: 18rem;
+        height: 15rem;
+        
+    }
 }

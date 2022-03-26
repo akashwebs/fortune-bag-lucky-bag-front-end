@@ -44,17 +44,20 @@ const RandomProduct = ({fortuneProduct}) => {
     return (
         <div>
             <button onClick={rendomProduct} className='choose-button'>CHOOSE 1 FOR ME</button>
+            <div className='modals'>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
+               
             >
                 <button onClick={closeModal} className='close-button-modal'><FaTimes></FaTimes></button>
                 <h1>Congratulation...</h1>
                 <img src={randomProdcut[0]?.image} className='random-image' alt="" />
                 <h2>{randomProdcut[0]?.name}</h2>
             </Modal>
+            </div>
         </div>
     );
 };
