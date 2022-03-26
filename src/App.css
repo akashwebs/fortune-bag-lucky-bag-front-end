@@ -2,3 +2,6 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: .95rem;
 }
+.app{
+    padding-bottom: 150px;
+}
