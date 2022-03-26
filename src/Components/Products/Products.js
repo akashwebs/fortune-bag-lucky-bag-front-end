@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { getRandomProduct } from '../../Utilities/Rendom';
 import Bag from '../Bag/Bag';
 import ChooseProduct from '../ChooseProduct/ChooseProduct';
 import './Products.css'
@@ -21,7 +20,16 @@ const Products = () => {
             .then(data => setBags(data))
     }, [])
 
-      
+    //   remove product with trash button
+    const removeFromCartWithTrash=(id)=>{
+        const allProduct=[...fortuneProduct];
+       for(let i=0; i<allProduct.length; i++ ){
+        if(allProduct[i].id===id){
+            allProduct.splice(i, 1); 
+            setFortuneProduct(allProduct);
+        }
+       }
+    }
    
     // choose again
     const chooseAgain=()=>{
@@ -33,9 +41,12 @@ const Products = () => {
 
         const checkProduct = fortuneProduct.find(product => product.id === bag.id);
         if (!checkProduct) {
-
-            const newBags = [...fortuneProduct, bag];
-            setFortuneProduct(newBags);
+            if(fortuneProduct.length<=3){
+                const newBags = [...fortuneProduct, bag];
+                setFortuneProduct(newBags);
+            }else{
+                alert('you can choose only 4 product')
+            }
         } else {
             alert('product choose only one time')
         }
@@ -60,17 +71,15 @@ const Products = () => {
                         fortuneProduct.map(product => <ChooseProduct
                             fortuneProduct={product}
                             key={product.id}
+                            removeFromCartWithTrash={removeFromCartWithTrash}
 
                         ></ChooseProduct>)
                     }
                     <RandomProduct fortuneProduct={fortuneProduct}></RandomProduct>   
-                    <button onClick={chooseAgain} className='choose-button'>CHOOSE AGAIN</button>
-           
+                    <button onClick={chooseAgain} className='choose-button choose-again'>CHOOSE AGAIN</button>
 
                 </div>
             </div>
-
-           
         </div>
     );
 };
