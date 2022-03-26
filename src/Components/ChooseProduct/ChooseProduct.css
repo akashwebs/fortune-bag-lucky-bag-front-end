@@ -3,12 +3,29 @@
     grid-template-columns: 2fr 6fr 2fr;
     gap: 5px;
     align-items: center;
+    margin-bottom: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 5px 3px;
+    border-radius: 5px;
 }
-.choose-product img{
-    width: 100%;
-    height: 100%;
+.choose-image{
+
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background: #758283;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choose-image img{
+    width:60%;
+    width: 60%;
 }
 .tarsh-button{
     cursor: pointer;
+}
+.tarsh-button:hover{
+    color: red;
+    
 }

@@ -7,6 +7,11 @@
     border-radius: 7px;
     margin: 10px 0;
     cursor: pointer;
+    transition: .2s all;
+}
+.choose-button:hover{
+    background: #E07C24;
+    color: #fff;
 }
 .random-image{
     width: 25rem;

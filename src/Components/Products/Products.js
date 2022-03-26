@@ -45,10 +45,10 @@ const Products = () => {
                 const newBags = [...fortuneProduct, bag];
                 setFortuneProduct(newBags);
             }else{
-                alert('you can choose only 4 product')
+                alert('you can not choose more then 4 product')
             }
         } else {
-            alert('product choose only one time')
+            alert('Already added in fortune box')
         }
     }
 
@@ -65,7 +65,7 @@ const Products = () => {
             </div>
             <div className='fortune-box-conatiner'>
                 <div className='fortune-box'>
-                    <h3>Fortune Box</h3>
+                    <h2>Fortune Box</h2>
                     {
 
                         fortuneProduct.map(product => <ChooseProduct
@@ -76,7 +76,7 @@ const Products = () => {
                         ></ChooseProduct>)
                     }
                     <RandomProduct fortuneProduct={fortuneProduct}></RandomProduct>   
-                    <button onClick={chooseAgain} className='choose-button choose-again'>CHOOSE AGAIN</button>
+                    <button onClick={chooseAgain} className=' choose-again'>CHOOSE AGAIN</button>
 
                 </div>
             </div>

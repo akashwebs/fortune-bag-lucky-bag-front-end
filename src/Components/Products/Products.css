@@ -19,12 +19,23 @@
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(204, 219, 232, .5) -3px -3px 6px 1px inset;
     border-radius: 7px;
 }
-.fortune-box>h3{
+.fortune-box>h2{
     text-align: center;
 }
 .choose-again{
-    border-color: #E03B8B !important;
-    color: #E03B8B !important;
+    padding: 10px 20px;
+    background: none;
+    font-weight: 600;
+    border-radius: 7px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: .2s all;
+    border:1px solid #E03B8B;
+    color: #E03B8B ;
+}
+.choose-again:hover{
+    background: #E03B8B;
+    color: #FFF;
 }
 @media screen and (max-width: 768px) {
     .container{
